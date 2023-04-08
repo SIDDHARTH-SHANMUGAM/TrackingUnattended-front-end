@@ -1,36 +1,16 @@
 import React from 'react'
-import './Home.css'
-import Card from './Card';
+import styled from 'styled-components'
 import Navbar from './Navbar';
-import { BrowserRouter as Router ,Routes , Route } from 'react-router-dom';
 
-const Home = () => {
+function Home() {
   return (
-    <>
-        <Router >
-        <Navbar />
-            <Routes>
-            <Route path='/' exact />
-            </Routes>
-        </Router>
-        
-      <div className='card-dec'>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-          <Card/>
-      </div>
-    </>
+    <Container>
+        <Navbar/>
+
+    </Container>
   )
 }
+
+const Container = styled.div``;
 
 export default Home
