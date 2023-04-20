@@ -18,15 +18,19 @@ function Login() {
       })
       .then(res=>{
         if(res.data==="Exist"){
-          navigate('/home')
+          navigate('/home');
         }
         else if(res.data==="not Exist")
         {
-          alert("Not yet signed in")
+          alert("Incorrect Mobile Number");
+        }
+        else if(res.data==="Password is Wrong")
+        {
+          alert("Incorrect Password");
         }
       })
       .catch(e=>{
-        alert("wrong details")
+        alert(e)
       })
     }
     catch(e){
@@ -152,6 +156,7 @@ const SubmitButton =styled.div`
       border: 2px solid #ffa807ce;
       border-radius: 5px;
       color: #ffa807ce;
+      cursor: pointer;
     }
   }
 `;

@@ -9,9 +9,9 @@ function Card({imageUrl, type , name, age, gender}) {
 
   return (
     <Container onClick={() => navigate('/detail')}>
-      <Image>
+      <ImageC>
         <img src={imageUrl} alt='sorry image is not available' />
-      </Image>
+      </ImageC>
         <TypeContainer>
             <h3>{type}</h3>
         </TypeContainer>
@@ -57,10 +57,12 @@ align-items: center;
 
 :hover{
   cursor: pointer;
+  width:101%;
+  height: 101%;
 }
 `;
 
-const Image = styled.div`
+const ImageC = styled.div`
 top: 0px;
 width: 100%;
 height: 50%;

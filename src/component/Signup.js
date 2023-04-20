@@ -165,16 +165,17 @@ const SubmitButton =styled.div`
       border: 2px solid #ffa807ce;
       border-radius: 5px;
       color: #ffa807ce;
+      cursor: pointer;
     }
   }
 `;
 
 const Login = styled.div`
-p{
-  :hover{
-    color: #ffa807ce;
+  p{
+    :hover{
+      color: #ffa807ce;
+    }
   }
-}
 `;
 
 export default Signup

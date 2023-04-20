@@ -110,12 +110,12 @@ function Navbar() {
                     </SearchIcon>
                 </SearchBar>
                 <Right>
-                    <NotifiButton onClick={() => navigate('./notification')}>
+                    <NotifiButton >
                         <img src='/noti.svg' alt=''  onClick={() => navigate('./notification')}/>
                     </NotifiButton>
-                    <SignupButton onClick={() => navigate('./signUp')}>
-                        <img src='/signup.svg' alt='' />
-                    </SignupButton>
+                    <ProfileButton onClick={() => navigate('./profile')}>
+                        <img src='/profile.svg' alt='' />
+                    </ProfileButton>
                 </Right>
             </Inner>
             <MobileSearchBar>
@@ -384,14 +384,14 @@ const NotifiButton = styled.div`
 
 `;
 
-const SignupButton = styled.div`
+const ProfileButton = styled.div`
 
     img{
         width: 35px;
-        height: 27px;
+        height: 28px;
         :hover{
             width:36px;
-            height: 28px;
+            height: 29px;
             cursor: pointer;
         }
     }
