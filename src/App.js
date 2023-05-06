@@ -9,6 +9,8 @@ import Activity from './component/Activity';
 import Add from './component/Add';
 import Aboutus from './component/Aboutus';
 import Details from './component/Details';
+import Unattend from './component/Unattend';
+import Missing from './component/Missing';
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
               <Route path='/addCase' exact element={<Add/>} />
               <Route path='/aboutUs' exact element={<Aboutus/>} />
               <Route path='/detail' exact element={<Details/>} />
+              <Route path='/addUnattend' exact element={<Unattend/>} />
+              <Route path='/addMissing' exact element={<Missing/>} />
               
             </Routes>
 

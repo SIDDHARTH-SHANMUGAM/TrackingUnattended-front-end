@@ -1,36 +1,41 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import axios from 'axios';
 import styled from 'styled-components'
 import Navbar from './Navbar';
 import Card from './Card';
 
 function Home() {
+  const [casearray, setCase] = useState('');
+
+  useEffect(() => {
+    const fetchData = async() => {
+      const data= await axios.get("http://localhost:8000/viewCard")
+      console.log(data);
+      setCase(data)
+      
+  };
+    fetchData();
+  }, []);
+
+
   return (
     <Container>
         <Navbar/>
         <Main>
-          <Card
-            imageUrl = {"/child1.jpg"}
-            type = {"Missing"}
-            name = {"sample1"}
-            age = {7}
-            gender = {"male"}
-          />
-          <Card
-            imageUrl = {"/child1.jpg"}
-            type = {"Missing"}
-            name = {"sample1"}
-            age = {7}
-            gender = {"male"}
-          />
-          <Card
-            imageUrl = {"/child1.jpg"}
-            type = {"Missing"}
-            name = {"sample1"}
-            age = {7}
-            gender = {"male"}
-          />
-          <Card/>
-          <Card/>
+          {
+            casearray && casearray?.data.reverse().map(
+              (casearry) =>(
+                <Card
+                  imageUrl = {casearry.photo}
+                  type = {casearry.caseType}
+                  name = {casearry.name}
+                  age = {casearry.age}
+                  gender = {casearry.gender}
+                />
+              )
+              )
+          }
+          
         </Main>
     </Container>
   )
@@ -54,7 +59,7 @@ const Main = styled.div`
     grid-gap: 20px;
 
     @media only screen and  (min-Width: 1600px){
-      grid-template-columns: repeat(6, 15%);
+      grid-template-columns: repeat(6,  15%);
     }
     @media only screen and  (mix-width: 1200px), (max-Width: 1600px){
       grid-template-columns: repeat(5, 18%);

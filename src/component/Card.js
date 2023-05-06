@@ -3,14 +3,12 @@ import styled from 'styled-components'
 import { useNavigate } from 'react-router-dom';
 
 function Card({imageUrl, type , name, age, gender}) {
-
   const navigate = useNavigate();
-
 
   return (
     <Container onClick={() => navigate('/detail')}>
       <ImageC>
-        <img src={imageUrl} alt='sorry image is not available' />
+        <img src={imageUrl} alt={imageUrl} />
       </ImageC>
         <TypeContainer>
             <h3>{type}</h3>
@@ -71,6 +69,7 @@ flex-direction: column;
 
 img{
   width: 100%;
+  height: 100%;
   border-radius : 5px 5px 0px 0px;
 }
 `;

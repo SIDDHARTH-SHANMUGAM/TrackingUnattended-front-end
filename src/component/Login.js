@@ -95,7 +95,7 @@ const Head = styled.div`
 `;
 
 const Form = styled.div`
-  width : 60%;
+  width : 70%;
   height: 80%;
   display : flex;
   background-color: white;
@@ -104,6 +104,11 @@ const Form = styled.div`
   padding-right: 5%;
   padding-bottom: 5%;
   border-radius:5px;
+
+  @media only screen and (min-width: 550px)
+  {
+      width: 350px;
+  }
 
 `;
 

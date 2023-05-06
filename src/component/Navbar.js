@@ -19,7 +19,7 @@ function Navbar() {
                 {menuicon}
             </MenuBar>
         </Div>
-        <List onClick={() => navigate('/')}>
+        <List onClick={() => navigate('/home')}>
                 <HomeIcon>
                     <img src='/home.svg' alt='' />
                 </HomeIcon>
